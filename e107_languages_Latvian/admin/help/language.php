@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Setting a new language will allow you to have a version of your content in that language on your site.";
-$ns -> tablerender("Language Help", $text);
+$text = "Jaunas valodas iestatīšana ļaus jums savā vietnē piedāvāt sava satura versiju šajā valodā.";
+$ns -> tablerender("Valodas palīdzība", $text);
