@@ -16,7 +16,7 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "With emoticons activated, standard smiley text strings will be replaced by their 
-respective emoticon images throughout the content in your site.";
+$text = "Ja ir aktivizētas emocijzīmes, standarta smiley teksta virknes tiks aizstātas ar to
+atbilstošus emocijzīmju attēlus visā jūsu vietnes saturā.";
 
-$ns -> tablerender("Emoticon Help", $text);
+$ns -> tablerender("Emocijas palīdzība", $text);
