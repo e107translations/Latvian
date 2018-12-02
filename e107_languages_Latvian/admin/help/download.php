@@ -16,7 +16,7 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Please upload your files into the ".e_FILE."downloads folder, your images into the ".e_FILE."downloadimages folder and thumbnail images into the ".e_FILE."downloadthumbs folder.
+$text = "Lūdzu, augšupielādējiet savus failus mapē ".e_FILE."lejupielàdes mapi, savus attēlus uz ".e_FILE."lejupielādējiet attēlu mapi un sīktēlu attēlus mapē ".e_FILE."sīkattēlu mapē.
 <br /><br />
-To submit a download, first create a parent, then create a category under that parent, you will then be able to make the download available.";
+Lai iesniegtu lejupielādi, vispirms izveidojiet vecāku, pēc tam izveidojiet kategoriju zem šī vecāka, pēc tam jūs varēsiet padarīt lejupielādi pieejamu.";
 $ns -> tablerender("Download Help", $text);
