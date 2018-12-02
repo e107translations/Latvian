@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "You are able to manage the files in your /files directory from this page. If you are getting an error message about permissions when uploading please CHMOD the directory you are attempting to upload into to 777.";
-$ns -> tablerender("File Manager Help", $text);
+$text = "Jūs varat pārvaldīt failus šajā / failus direktorijā no šīs lapas. Ja augšupielādējot augšupielādējat kļūdas ziņojumu par atļaujām, lūdzu, CHMOD direktoriju, kuru mēģināt augšupielādēt uz 777.";
+$ns -> tablerender("Failu pārvaldnieka palīdzība", $text);
