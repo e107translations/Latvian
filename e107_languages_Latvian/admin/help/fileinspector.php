@@ -19,34 +19,34 @@ if (!defined('e107_INIT')) { exit; }
 /*
 
 $text = "<div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_core.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Core File</div>
+<img src='".e_IMAGE."fileinspector/file_core.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;kodola faili</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_warning.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Known Insecurity</div>
+<img src='".e_IMAGE."fileinspector/file_warning.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Zināma nedrošība</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_check.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Core File (Integrity Pass)</div>
+<img src='".e_IMAGE."fileinspector/file_check.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Galvenais fails (Integrity Pass)</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_fail.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Core File (Integrity Fail)</div>
+<img src='".e_IMAGE."fileinspector/file_fail.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Galvenais fails (Integrity Fail)</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_uncalc.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Core File (Incalculable)</div>
+<img src='".e_IMAGE."fileinspector/file_uncalc.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Galvenais fails (Nepārrēķināms)</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_missing.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Missing Core File</div>
+<img src='".e_IMAGE."fileinspector/file_missing.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Trūkst kodola faila</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_old.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Old Core File</div>
+<img src='".e_IMAGE."fileinspector/file_old.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Vecā kodola fails</div>
 <div style='margin-left: 0px; margin-bottom: 1px; margin-top: 2px; vertical-align: top; white-space: nowrap'>
-<img src='".e_IMAGE."fileinspector/file_unknown.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Non Core File</div>";
+<img src='".e_IMAGE."fileinspector/file_unknown.png' alt='".$dir."' style='margin-left: 3px; width: 16px; height: 16px' />&nbsp;Nav kodola fails</div>";
 $ns -> tablerender("File Key", $text);*/
 
-$text = "File Inspector scans and analyses the files on your sites server. When File Inspector encounters 
-an e107 core file, it checks it for file consistency to make sure it isn't corrupted.";
+$text = "Failu inspektors skenē un analizē failus jūsu vietņu serverī. Kad sastopas failu inspektors
+e107 kodols fails, tas pārbauda to par faila konsekvenci, lai pārliecinātos, ka tas nav bojāts.";
 
 $text .= "<br /><br />
-<a href='".e_SELF."?create'>Click here to create a snapshot of your own plugins files for use in File Inspector.</a>";
+<a href='".e_SELF."?create'>Noklikšķiniet šeit, lai izveidotu momentuzņēmumu saviem spraudņu failiem, ko izmantot faila inspektorā.</a>";
 
 if ($pref['developer']) {
 $text .= "<br /><br />
-The additional string matching tool (developer mode only) enables you to scan the files on your server for text strings 
-using regular expressions. The regex engine in use is PHP's <a href='http://php.net/pcre'>PCRE</a> 
-(the preg_* functions), so enter your query as #pattern#modifiers in the fields provided.";
+Papildu virknes atbilstības rīks (tikai izstrādātāju režīmā) ļauj jums skenēt failus uz jūsu servera par teksta virknes
+izmantojot regulāras izteiksmes. Izmantotais regex dzinējs ir PHP <a href='http://php.net/pcre'>PCRE</a> 
+(the preg_* functions), ievadiet savu veicinājumu kā #pattern#modifiers pieprasītajā laukā.";
 }
 
-$ns -> tablerender("File Inspector Help", $text);
+$ns -> tablerender("Failu inspektora palīdzība", $text);
