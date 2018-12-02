@@ -16,7 +16,7 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "User Class Help";
+$caption = "Lietotāja klases palīdzība";
 
 if (!($action = vartrue($_GET['action'])))
 {
@@ -29,49 +29,49 @@ if (!($action = vartrue($_GET['action'])))
 switch ($action)
 {
   case 'initial' :
-	$text = "Set the classes to which a new member of the site is assigned initially. 
-	If you have verification enabled, this assignment may take place either when the user signs up, or when the user is verified.<br /><br />
-	  And remember that if you are using hierarchical user classes, a user is automatically a member of all classes 'above' each selected class in the tree";
+	$text = "Iestatiet klases, kurām sākotnēji tika piešķirts jauns vietnes dalībnieks. 
+	Ja jums ir iespējota verifikācija, šis uzdevums var notikt vai nu tad, kad lietotājs pierakstās, vai kad lietotājs ir apstiprināts.<br /><br />
+	  Un atcerieties, ka, ja jūs izmantojat hierarhijas lietotāju klases, lietotājs automātiski ir visu kategoriju 'augšā' dalībnieks katrā izvēlētajā klasē";
 	break;
   case 'options' :
-	$text = "The Setup options allow you to create and remove the default class hierarchy. You can see the effect by looking at the user tree.<br />
-	This won't destroy your other class information, and you can modify or remove the hierarchy later.<br /><br />
-	You should only need to rebuild the class hierarchy if database corruption occurs";
+	$text = "Iestatīšanas opcijas ļauj izveidot un noņemt noklusējuma klases hierarhiju. Jūs varat redzēt efektu, apskatot lietotāja koku.<br />
+	Tas neiznīcinās jūsu cita klases informāciju, un vēlāk jūs varat mainīt vai noņemt hierarhiju.<br /><br />
+	Ja datu bāzes korupcija rodas, jums ir nepieciešams tikai atjaunot klases hierarhiju";
 	break;
   case 'membs' :
-    $text = "Now on user admin page";
+    $text = "Tagad lietotāja admin lapā";
 	break;
   case 'debug' :
-	$text = "For advanced users only - shows the hierarchy of the classes, plus the assigned classes and the classes to which the first 20 site members have access.<br />
-	The number in front of the class name is its unique ID (reference number). The 'Everyone' class has an ID of 0 (zero). e107 uses these IDs throughout to refer to classes.<br />
-	After the class name is the class visibility and editability - [vis:253, edit: 27] for example. This means that the class will be visible in most selectors only if the current user is a member of class 253, 
-	and the user may edit their class membership only if they are a member of class 27.<br />
-	Finally, after the '=', is a list of all classes either above or below each class in the tree, plus the ID of that class. Thus a user who is a member of a particular class will
-	 be a member of all the classes in this list.<br /><br />
-	To help with understanding, the class membership of the first 20 members is shown. The first entry on each line shows the classes of which the user is a member. The 
-	 second entry lists all the classes where the user is a member once inheritance takes effect. The third entry shows which class memberships they can edit";
+	$text = "Tikai pieredzējušiem lietotājiem - tiek parādīta klases hierarhija, kā arī piešķirtās klases un klases, kurām ir pieejami pirmie 20 vietņu dalībnieki.<br />
+	Numura klasei priekšā ir tās unikālais ID (atsauces numurs). Katra klases ID ir 0 (nulle). e107 izmanto šos ID, lai apzīmētu klases.<br />
+	Pēc klases nosaukuma ir klases redzamība un rediģējamība - piemēram, [vis: 253, rediģēt: 27]. Tas nozīmē, ka vairumā selektoru klase būs redzama tikai tad, ja pašreizējais lietotājs ir 253. Grupas dalībnieks,
+un lietotājs var rediģēt savu klases dalību tikai tad, ja viņi ir 27. klases dalībnieki.<br />
+	Visbeidzot, pēc '=' ir saraksts ar visām klasēm vai nu virs vai zem katras klases kokā, kā arī šīs klases ID. Tādējādi lietotājs, kurš ir konkrētas klases dalībnieks, būs
+būt visu klases loceklim šajā sarakstā.<br /><br />
+	Lai palīdzētu saprast, tiek parādīta pirmā 20 dalībnieku klase. Pirmais ieraksts katrā rindā parāda klases, kuras lietotājs ir dalībnieks. The
+Otrajā ierakstā ir uzskaitītas visas klases, kurās lietotājs ir dalībnieks, kad mantojums stājas spēkā. Trešais ieraksts parāda, kuras klases biedri viņi var edit";
 	break;
   case 'test' :
   case 'special' :
-    $text = "Don't use this!!! For the devs only!!!";
+    $text = "Nelietojiet to !!! Tikai izdevējiem !!!";
 	break;
   case 'edit' :
   case 'config' :
-	$text = "You can create classes, or edit existing classes from this page.<br />
-         This is useful for restricting users to certain parts of your site. For example, you could create a class called TEST, 
-		 then create a forum which only allowed users in the TEST class to access it.<br /><br />
-		 The class name is displayed in drop-down lists and the like; in some places the more detailed description is also displayed.<br /><br />
-		 The class icon may be displayed in various places on the site, if one is set.<br /><br />
-		 To allow users to determine whether they can be a member of a class, allow them to manage it. If you set 'no-one' here, only the admins
-		 can manage membership of the class<br /><br />
-		 The 'visibility' field allows you to hide the class from most members - applies in some of the drop-down lists and checkboxes.<br /><br />
-		 The 'class parent' allows you to set a hierarchy of classes. If the 'top' of the hierarchy is the 'Everybody/Public' or 'Member' classes, the 
-		 classes lower down the hierarchy also have the rights of their parent class, and that classes' parent, and so on. If the 'top' of the hierarchy is
-		 the 'No One/Nobody' class, then rights are accumulated in the opposite direction - a class accumlates all the rights of a class <b>below</b> them in the 
-		 tree. The resulting tree is shown in the lower part of the page; you can expand and contract branches by clicking on the '+' and '-' boxes.";
+	$text = "Jūs varat izveidot klases vai rediģēt esošās klases no šīs lapas.<br />
+         Tas ir noderīgi, lai ierobežotu lietotājus dažām vietnes daļām. Piemēram, jūs varētu izveidot klasi TEST,
+tad izveidojiet forumu, kas TEST klases lietotājiem ļautu piekļūt tikai tam.<br /><br />
+		 Klases nosaukums tiek parādīts nolaižamajos sarakstos un tamlīdzīgi; dažviet tiek parādīts arī detalizēts apraksts. <br /> <br />
+Klases ikona var tikt parādīta dažādās vietnes vietnēs, ja tā ir iestatīta.<br /><br />
+		 Lai ļautu lietotājiem noteikt, vai viņi var būt klasei piederīgi, ļauj viņiem to pārvaldīt. Ja šeit šeit iestatāt 'neviens', tikai administratori
+var vadīt kluba piederību<br /><br />
+		 Laukā 'Atpazīstamība' varat paslēpt klasi no lielākās daļas dalībnieku - attiecas uz dažiem nolaižamajiem sarakstiem un izvēles rūtiņām.<br /><br />
+		 'Klases vecāks' ļauj iestatīt klases hierarhiju. Ja hierarhijas 'augšā' ir 'visi / publiska' vai 'dalībnieka' klases, tad
+klases nolaižot hierarhiju, ir arī viņu vecāku klases tiesības, un šīs klases ir vecāks un tā tālāk. Ja ir hierarhijas 'augšā'
+klases 'Neviens / neviens', tad tiesības tiek uzkrātas pretējā virzienā - klasē tiek uzkrātas visas <b> zemāk </ b> kategorijas tiesības <
+koks. Iegūtais koks ir redzams lapas apakšdaļā; jūs varat paplašināt un noslēgt līgumus, noklikšķinot uz laukiem '+' un '-'.";
 	break;
   case 'display' :
   default :
-	$text = "You can select classes for editing, and also delete existing classes, from this page.";
+	$text = "No šīs lapas varat atlasīt rediģēšanas klases un arī dzēst esošās klases.";
 }
 e107::getRender() -> tablerender($caption, $text);
