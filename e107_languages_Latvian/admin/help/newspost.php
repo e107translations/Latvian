@@ -21,37 +21,37 @@ $action = varset($_GET['action']);
 switch ($action)
 {
   case 'create' :
-	$text = "<b>General</b><br />
-Body will be displayed on the main page; extended will be readable by clicking a 'Read More' link.
+	$text = "<b>vispārējs</b><br />
+Ķermenis tiks parādīts galvenajā lapā; pagarināts būs lasāms, noklikšķinot uz 'Lasīt vairāk' saites.
 <br />
 <br />
-<b>Show title only</b>
+<b>Rādīt tikai nosaukumu</b>
 <br />
-Enable this to show the news title only on front page, with clickable link to full story.
+Iespējojiet šo, lai parādītu ziņu nosaukumu tikai pirmajā lapā, ar noklikšķināmu saiti uz pilnu stāstu.
 <br /><br />
-<b>Activation</b>
+<b>Aktivizēšana</b>
 <br />
-If you set a start and/or end date your news item will only be displayed between these dates.
+Ja iestatāt sākuma un / vai beigu datumu, jūsu ziņu vienums tiks rādīts tikai starp šiem datumiem.
 ";
 	break;
   case 'cat' :
-	$text = "You can separate your news items into different categories, and allow visitors to display only the news items in those categories. <br /><br />Upload your news icon images into either ".e_THEME."-yourtheme-/images/ or themes/shared/newsicons/.";
+	$text = "Jūs varat nodalīt savus ziņu priekšmetus dažādās kategorijās un ļaut apmeklētājiem rādīt tikai ziņu vienumus šajās kategorijās.<br /><br /> Augšupielādējiet ziņu ikonu attēlus abās ".e_THEME."-yourtheme-/images/ or themes/shared/newsicons/.";
     break;
   case 'pref' :
-    $text = 'Set various news-related options<br /><br />
-	<b>News Category Columns</b><br />
-	Requires theme support to be selectable<br /><br />
-	<b>News posts to display per page</b><br />
-	For the main news page; displays items in unextended format.<br /><br />
-	<b>News posts to display in archive</b><br />
-	Sets the number of news posts which are displayed as title only on each news page (included in the previous total).<br /><br />
-	<b>Enable WYSIWYG editor</b><br />
-	Requires that users who can submit news can also post HTML.
+    $text = 'Iestatiet dažādas ar ziņām saistītas iespējas<br /><br />
+	<b>Jaunumu kategorijas kolonnas</b><br />
+	Nepieciešams izvēlēties tēmu atbalstu<br /><br />
+	<b>Ziņu ziņas, lai parādītu vienā lapā</b><br />
+	Par galveno ziņu lapu; parāda vienumus neeksistējošā formātā.<br /><br />
+	<b>Ziņu ziņas, kas jāatspoguļo arhīvā</b><br />
+	Nosaka ziņu amatu skaitu, kas tiek rādīti kā virsraksts tikai katrā ziņu lapā (iekļauta iepriekšējā kopējā vērtībā).<br /><br />
+	<b>Iespējot WYSIWYG redaktoru</b><br />
+	Nepieciešams, lai lietotāji, kas var iesniegt ziņas, varētu arī publicēt HTML.
 	';
 	break;
   case 'list' :
   default :
-	$text = 'List of all news items. To edit or delete, click on one of the icons in the \'options\' column. To view the item, click
-		on the title.';
+	$text = 'Visu ziņu saraksts. Lai rediģētu vai dzēstu, noklikšķiniet uz vienas no ikonām \'opcijas\' sleja. Lai skatītu vienumu, noklikšķiniet uz
+par virsrakstu.';
 }
 $ns -> tablerender($caption, $text);
