@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Your preferences allow you to specify all the important settings on your site, from site name and description to flood protection and profanity filtering.";
-$ns -> tablerender("Preferences Help", $text);
+$text = "Jūsu preferences ļauj jums norādīt visus svarīgos iestatījumus savā vietnē, sākot ar vietnes nosaukumu un aprakstu, lai aizsargātu pret plūdiem un nežēlības filtrēšanu.";
+$ns -> tablerender("Preferences Palīdzība", $text);
