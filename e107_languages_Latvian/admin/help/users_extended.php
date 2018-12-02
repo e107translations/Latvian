@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = " Extended user fields allow you to add additional types of data a user is able to specify as part of their profile.";
-$ns -> tablerender(" Extended User Fields Help", $text);
+$text = " Paplašinātie lietotāju lauki ļauj jums pievienot papildu veidu datus, kurus lietotājs var norādīt kā sava profila daļu.";
+$ns -> tablerender("Paplašināta lietotāja Fields Palīdzība", $text);
