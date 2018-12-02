@@ -16,6 +16,6 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "Caching";
-$text = "If you have caching turned on it will vastly improve speed on your site and minimise the number of calls to the sql database.<br /><br /><b>IMPORTANT! If you are making your own theme turn caching off otherwise any changes you make will not be reflected immediately.</b>";
+$caption = "Kešatmiņa";
+$text = "Ja jums ir ieslēgts caching, tas ievērojami uzlabos jūsu vietnes ātrumu un samazinās zvanu skaitu uz sql datu bāzi.<br /><br /><b>SVARĪGS! Ja jūs izveidojat savu tēmu, pārvēršiet kašingu, pretējā gadījumā jebkādas jūsu veiktās izmaiņas netiks atspoguļotas nekavējoties.</b>";
 $ns -> tablerender($caption, $text);
