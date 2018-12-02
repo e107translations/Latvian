@@ -16,6 +16,6 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Any meta tags you enter here will be sent to screen in the right place.";
+$text = "Visi šeit ievadītie meta tagi tiks nosūtīti uz ekrānu īstajā vietā.";
 
-$ns -> tablerender("Meta Tags", $text);
+$ns -> tablerender("Meta Tagi", $text);
