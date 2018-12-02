@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "These collection of tools allow you to manage your database.";
-$ns -> tablerender("Database Tools", $text);
+$text = "Šis rīku kolekcijas ļauj jums pārvaldīt savu datubāzi.";
+$ns -> tablerender("Datu bāzes rīki", $text);
