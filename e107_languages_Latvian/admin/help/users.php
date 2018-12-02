@@ -16,62 +16,62 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "User Management";
+$caption = "Lietotāju pārvaldība";
 if (e_QUERY) list($action,$junk) = explode('.',e_QUERY); else $action = 'list';
 
 switch ($action)
 {
   case 'create' :
-    $text = "This page allows you to create a user, who is immediately a normal member of the site, with whatever class memberships you assign.<br /><br />
-	If you check the 'Send confirmation email with password to new user' box, the login name and password are sent <b>in clear</b>, so the user must change
-	their password on receipt.
+    $text = "Šī lapa ļauj jums izveidot lietotāju, kurš nekavējoties ir parastais vietnes dalībnieks, neatkarīgi no tā, kāda veida klase jums ir piešķirts.<br /><br />
+	Ja jūs atzīmējat lodziņu 'Nosūtīt apstiprinājuma e-pastu ar paroli jaunam lietotājam', lietotājvārds un parole tiek sūtīti <b> skaidrā </ b>, tādēļ lietotājam ir jāmaina
+viņu parole saņemšanas brīdī.
 	";
     break;
 
   case 'prune' :
-	$text = "Bulk deletes unwanted users from the database. These may be either those who failed to complete the registration process, or 
-	those whose email addresses bounced. Any forum posts, comments etc remain, and are flagged as from a 'Deleted User'.
+	$text = "Bulk izdzēš nevēlamus lietotājus no datubāzes. Tie var būt tie, kas neveica reģistrācijas procesu, vai
+tiem, kuru e-pasta adreses atgriezās. Jebkurš foruma ziņas, komentāri utt paliek, un tiek atzīmēti kā 'Svītrots lietotājs'.
 	";
 	break;
 
   case 'unverified' :
-	$text = "Shows those members who have failed to complete their registration. Options generally as for the complete members list.";
+	$text = "Suzaicina tos dalībniekus, kuri nav pabeidzuši reģistrāciju. Parasti tāpat kā pilnam dalībnieku sarakstam.";
     break;
 
   case 'options' :
-	$text = "Sets various options affecting all users.<br /><br />
-	<b>Allow Avatar Upload</b><br />
-	If enabled, users may upload an avatar of their choice, which is stored on your server. This can have security implications.<br /><br />
-	<b>Allow Photo Upload</b><br />
-	If enabled, users may upload a photo of their choice, which is stored on your server. This can have security implications.<br /><br />
-	<b>Online User Tracking</b><br />
-	This must be enabled to keep track of most user activity, including counts of online members. It does increase database activity significantly.<br /><br />
-	<b>Member Information</b><br />
-	Determines which class of members can view the member list.
+	$text = "Iestata dažādas iespējas, kas ietekmē visus lietotājus.<br /><br />
+	<b>Atļaut ielādēt attēlu</b><br />
+	Ja tas ir iespējots, lietotāji var augšupielādēt savu izvēli, kas tiek saglabāta jūsu serverī. Tam var būt drošības sekas.<br /><br />
+	<b>Atļaut fotoattēlu augšupielādi</b><br />
+	Ja tas ir iespējots, lietotāji var augšupielādēt fotoattēlu pēc savas izvēles, kas tiek saglabāts jūsu serverī. Tam var būt drošības sekas.<br /><br />
+	<b>Tiešsaistes lietotāju izsekošana</b><br />
+	Tam jābūt iespējotam, lai sekotu līdzi lielākajai lietotāju aktivitātei, tostarp tiešsaistes dalībnieku skaitam. Tas ievērojami palielina datu bāzes darbību.<br /><br />
+	<b>Dalībvalsts informācija</b><br />
+	Nosaka, kura dalībnieku klase var apskatīt dalībnieku sarakstu.
 	";
     break;
 
   default :
-	$text = "This page shows a list of your registered members. You can update their settings, give them administrator status and set their user class 
-	among other things.<br /><br />
-	The sort order can be changed by clicking on the column heading.<br />
-	The displayed columns can be changed by clicking on 'Edit Display Options', selecting the required columns, then clicking on 'Search/Refresh'<br /><br />
+	$text = "Šajā lapā ir redzams jūsu reģistrēto dalībnieku saraksts. Jūs varat atjaunināt savus iestatījumus, piešķirt viņiem administratora statusu un iestatīt lietotāju klasi
+cita starpā.<br /><br />
+	Kārtojuma secību var mainīt, noklikšķinot uz slejas virsraksta.<br />
+	Parādītās slejas var mainīt, noklikšķinot uz 'Rediģēt displeja opcijas', atlasot vajadzīgās slejas, pēc tam noklikšķinot uz 'Meklēt / Atsvaidzināt'<br /><br />
 	<b>Info</b><br />
-	Show this user's profile (can also click on their display name)<br /><br />
-	<b>Edit</b><br />
-	Edit the settings for this user. <br /><br />
-	<b>Ban/Unban</b><br />
-	Determine whether the user can access the site. <br /><br />
-	<b>Activate</b><br />
-	This activates a user who would normally have replied to the activation email.<br /><br />
-	<b>Resend Email</b><br />
-	Resends the activation email to the user.<br /><br />
-	<b>Test email</b><br />
-	Check user's email address for validity (doesn't send an email)<br /><br />
-	<b>Set Class</b><br />
-	Set class membership for a user<br /><br />
-	<b>Delete</b><br />
-	Totally removes the user from membership of the site (any forum posts, comments etc remain, and are flagged as from a 'Deleted User')
+	Rādīt šī lietotāja profilu (var arī noklikšķināt uz redzamā vārda)<br /><br />
+	<b>Labot</b><br />
+	Rediģējiet šī lietotāja iestatījumus. <br /><br />
+	<b>Bloķēt/Atbloķēt</b><br />
+	Nosakiet, vai lietotājs var piekļūt vietnei. <br /><br />
+	<b>Aktivizēt</b><br />
+	Tas aktivizē lietotāju, kurš parasti atbildētu uz aktivizācijas e-pastu.<br /><br />
+	<b>Pārsūtīt e-pastu</b><br />
+	Atkārtoti nosūta lietotājam aktivizācijas e-pastu.<br /><br />
+	<b>Pārbaudīt e-pastu</b><br />
+	Pārbaudiet lietotāja derīguma e-pasta adresi (nesūta e-pastu)<br /><br />
+	<b>Iestatīt klasi</b><br />
+	Iestatīt lietotāja klasei piederīgu dalību<br /><br />
+	<b>Dzēst</b><br />
+	Pilnībā lietotājs tiek noņemts no dalības vietnē (visas foruma ziņas, komentāri uc paliek, un tiek atzīmēti kā 'Svītrots lietotājs')
 	";
 }
 
