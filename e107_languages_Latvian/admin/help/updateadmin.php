@@ -16,5 +16,5 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Update your password here.";
-$ns -> tablerender("Update Settings Help", $text);
+$text = "Atjauniniet savu paroli šeit.";
+$ns -> tablerender("Atjauniniet iestatījumu palīdzību", $text);
