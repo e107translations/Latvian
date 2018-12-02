@@ -33,7 +33,7 @@ if(isset($_POST['reset']))
 				$sql2 ->update("menus", "menu_order='$count' WHERE menu_id='$menu_id' ");
 				$count++;
 			}
-			$text = "<b>Menus reset in database</b><br /><br />";
+			$text = "<b>Izvēlnes atiestatītas datu bāzē</b><br /><br />";
 		}
 }
 else
@@ -41,11 +41,11 @@ else
 	unset($text);
 }
 
-$text = "The Menu-Manager allows you to place and arrange your menus within your theme template. 
+$text = "Menu-Manager ļauj izvietot un sakārtot savas izvēlnes savā motīvu veidnē. 
 
-[u]Hover[/u] over the sub-areas to modify existing menu items. 
+[u]Novietot kursoru[/u] pār apakšapgabaliem, lai mainītu esošās izvēlnes vienumus. 
 
-If you find the menus are not updating correctly, clicking the refresh button below may help. 
+Ja atrodat, ka izvēlnes netiek pareizi atjauninātas, var palīdzēt noklikšķinot uz tālāk redzamās atsvaidzināšanas pogas. 
 
 [html]
 <form method='post' id='menurefresh' action='".$_SERVER['PHP_SELF']."'>
@@ -53,9 +53,9 @@ If you find the menus are not updating correctly, clicking the refresh button be
 ".$frm->admin_button('reset','Refresh','cancel')."</div>
 </form>
 [br]
-".e107::getParser()->toGlyph('search')." indicates that the menu's visibility has been modified.
+".e107::getParser()->toGlyph('search')." norāda, ka izvēlnes redzamība ir mainīta.
 [/html]
 ";
 
 $text = $tp->toHtml($text, true);
-$ns->tablerender("Menu Manager Help", $text);
+$ns->tablerender("Izvēlnes pārvaldnieka palīdzība", $text);
