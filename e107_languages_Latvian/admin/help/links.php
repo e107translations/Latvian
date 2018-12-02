@@ -16,7 +16,7 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$text = "Enter all your site links here. Links added here will be shown in your main navigation menu, for other links please use the Links Page plugin.
+$text = "Ievadiet visas vietnes saites šeit. Šeit pievienotās saites tiks parādītas jūsu galvenajā navigācijas izvēlnē, jo citām saitēm, lūdzu, izmantojiet spraudni Saites Page.
 <br />
 ";
-$ns -> tablerender("Links Help", $text);
+$ns -> tablerender("Saites Palīdzība", $text);
