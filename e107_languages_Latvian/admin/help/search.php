@@ -9,13 +9,13 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "Search Help";
+$caption = "Meklēt palīdzību";
 $text = "
-	If your MySQL server version supports it you can switch 
-	to the MySQL sort method which is faster than the PHP sort method. See preferences.
+	Ja jūsu MySQL servera versija to atbalsta, jūs varat pārslēgties
+uz MySQL veida noteikšanas metodi, kas ir ātrāka nekā PHP kodēšanas metode. Skatīt preferences.
 <br /><br />
-	If your site includes Ideographic languages such as Chinese and Japanese you must 
-	use the PHP sort method and switch whole word matching off.
+	Ja jūsu vietnē ir ietvertas ideogrāfiskās valodas, piemēram, ķīniešu un japāņu valodas
+izmantojiet PHP kodēšanas metodi un izslēdziet visu vārdu saskaņošanu.
 
 ";
 $ns->tablerender($caption, $text);
