@@ -16,7 +16,7 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "Site Admin Help";
-$text = "Use this page to edit the preferences for, or delete site administrators. The administrator will only have permission to access the features that are ticked.<br /><br />
-To create a new admin go to the user config page and update an existing user to admin status.";
+$caption = "Vietnes administrācijas palīdzība";
+$text = "Izmantojiet šo lapu, lai rediģētu vietņu administratorus vai dzēstu vietnes administratorus. Administratoram būs tikai atļauja piekļūt atzīmētajām funkcijām.<br /><br />
+Lai izveidotu jaunu administratoru, dodieties uz lietotāja konfigurācijas lapu un atjauniniet esošo lietotāju uz admin statusu.";
 $ns -> tablerender($caption, $text);
