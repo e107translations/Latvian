@@ -16,83 +16,83 @@
 
 if (!defined('e107_INIT')) { exit; }
 
-$caption = "Banning users from your site";
+$caption = "Aizliedzot lietotājus no jūsu vietnes";
 if (e_QUERY) list($action,$junk) = explode('-',e_QUERY.'-'); else $action = 'list';		// Non-standard separator in query
 
 switch ($action)
 {
 case 'transfer' :
-  $text = 'This page allows you to transfer banlist data to and from this site as CSV (Comma Separated Variable) files.<br /><br />';
-  $text .= "<b>Data Export</b><br />
-  Select the types of ban to export. The fields will be delimited by the chosen separator, and optionally included within the selected quotation marks.<br /><br />";
-  $text .= "<b>Data Import</b><br />
-  You can choose whether the imported bans replace existing imported bans, or whether they add to the list. If the imported data includes an expiry date/time, you
-  can select whether this is used, or whether the value for this site is used.<br /><br />";
-  $text .= "<b>CSV Format</b><br />
-  The format of each line in the file is: IP/email, date, expiry, type, reason, notes.<br />
-  Date and expiry are in the format YYYYMMDD_HHMMDD, except that a zero value indicates 'unknown' or 'indefinite'<br />
-  Only the IP or email address is essential; the other fields are imported if present.<br /><br />
-  <b>Note:</b> You will need to modify filetypes.xml to allow admins to upload the 'CSV' file type.";
+  $text = 'Šī lapa ļauj pārsūtīt banlist datus uz un no šīs vietnes kā CSV (Comma Separated Variable) failus.<br /><br />';
+  $text .= "<b>Datu eksportēšana</b><br />
+  Izvēlieties eksporta aizlieguma veidus. Lauki tiks nošķirti ar izvēlēto atdalītāju un pēc izvēles iekļauti izvēlētajās pēdiņās.<br /><br />";
+  $text .= "<b>Datu importēšana</b><br />
+  Jūs varat izvēlēties, vai importētie aizliegumi aizstāj spēkā esošos importētos aizliegumus vai arī tie pievieno sarakstam. Ja importētajos datos ir norādīts derīguma termiņš / laiks, jums
+   var izvēlēties, vai tas tiek lietots, vai arī tiek izmantota šīs vietnes vērtība.<br /><br />";
+  $text .= "<b>CSV Formāts</b><br />
+  Katras faila rindas formāts ir: IP / e-pasts, datums, derīguma termiņš, veids, iemesls, piezīmes.<br />
+  Datums un derīguma termiņš ir formātā YYYYMMDD_HHMMDD, izņemot to, ka norāda nulles vērtību 'nezināms' vai 'nenoteikts'<br />
+  Būtiska ir tikai IP vai e-pasta adrese; pārējie lauki tiek importēti, ja tie ir klātienē.<br /><br />
+  <b>Piezīme:</b> Jums būs jāmaina filetypes.xml, lai ļautu administratoriem augšupielādēt 'CSV' faila tips.";
   break;
 case 'times' :
-  $text = 'This page sets the default behaviour for various types of ban.<br />
-  If a message is specified, this will be shown to the user (where appropriate). If the message starts with \'http://\' or \'https://\' control is 
-  passed to the specified URL. Otherwise the user will most likely get a blank screen.<br />
-  The ban will be in force for the time specified; after which it will be cleared next time they access the site.';
+  $text = 'Šajā lapā tiek iestatīta noklusējuma darbība dažādiem aizlieguma veidiem.<br />
+  Ja tiek norādīts ziņojums, tas tiks parādīts lietotājam (ja nepieciešams). Ja ziņojums sākas ar \'http://\' or \'https://\' kontrole ir 
+  pārsūtīts uz norādīto URL. Pretējā gadījumā lietotājs, visticamāk, iegūs tukšu ekrānu.<br />
+  Aizliegums būs spēkā noteiktā laikā; pēc tam tas tiks notīrīts nākamreiz, kad tās piekļūst vietnei.';
   break;
 case 'options' :
   $text = '<b>Reverse DNS</b><br />
-    If enabled, the user\'s IP address is looked up to obtain the associated domain name. This accesses an external server, so there may
-	be a delay before the information is available - and if the server is off-line, there may be a very long delay.<br /><br />
-	You can choose to look up server names on all site accesses, or only when adding a new ban.<br /><br />
-	<b>Maximum Access Rate</b><br />
-	This sets the maximum number of site accesses permitted from a single user or IP address in any five-minute period, and is intended
-	to detect denial of service attacks. At 90% of the selected limit, the user receives a warning; on reaching the limit they are banned.
-	Different thresholds may be set for guests and logged-in users.<br /><br />
-	<b>Retrigger Ban Period</b><br />
-	This option is only relevant if the option to ban users for a specified time, rather than indefinitely, has been used. If enabled, and
-	the user attempts to access the site, the ban period is extended (as if the ban had just started).
+    Ja tas ir iespējots, tiek meklēta lietotāja IP adrese, lai iegūtu saistīto domēna nosaukumu. Tas piekļūst ārējam serverim, tāpēc tas var notikt
+ir aizkave, pirms informācija ir pieejama - un, ja serveris ir izslēgts, var būt ļoti ilga kavēšanās.<br /><br />
+	Jūs varat izvēlēties meklēt serveru nosaukumus visos vietnes piekļūt vai tikai pievienojot jaunu aizliegumu.<br /><br />
+	<b>Maksimālais piekļuves līmenis</b><br />
+	Tas nosaka maksimālo vietnes piekļuves vietu skaitu, kas pieļaujams no viena lietotāja vai IP adreses jebkurā piecu minūšu periodā, un ir paredzēts
+lai atklātu pakalpojumu atteikšanas uzbrukumus. 90% no atlasītā limita lietotājs saņem brīdinājumu; sasniedzot ierobežojumu, kas viņiem ir aizliegts.
+Viesi un pieslēgtie lietotāji var iestatīt dažādas robežvērtības.<br /><br />
+	<b>Retrigger aizlieguma periods</b><br />
+	Šī opcija ir piemērota tikai tad, ja ir izmantota iespēja ierobežot lietotājus uz noteiktu laiku, nevis uz nenoteiktu laiku. Ja ir iespējota, un
+lietotājs mēģina piekļūt vietnei, aizlieguma periods ir pagarināts (it kā aizliegums tikko sākts).
 	';
   break;
 case 'edit' :
 case 'add' :
-$text = "You can ban users from your site at this screen.<br />
-Either enter their full IP address or use a wildcard to ban a range of IP addresses. You can also enter an email address to stop a user registering as a member on your site.<br /><br />
-<b>Banning by IP address:</b><br />
-Entering the IP address 123.123.123.123 will stop the user with that address visiting your site.<br />
-Entering an IP address with one or more wildcards in the end blocks, such as 123.123.123.* or 214.098.*.*, will stop anyone in that IP range from visiting your 
-site. (Note that there must be exactly four groups of digits or asterisks)<br /><br />
-IPV6 format addresses are also supported, including '::' to represent a block of zero values. Each pair of digits in the end fields may be a separate wildcard<br /><br />
-<b>Banning by email address</b><br />
-Entering the email address foo@bar.com will stop anyone using that email address from registering as a member on your site.<br />
-Entering the email address *@bar.com will stop anyone using that email domain from registering as a member on your site.<br /><br />
-<b>Banning by user name</b><br />
-This is done from the user administration page.<br /><br />";
+$text = "Šajā ekrānā varat aizliegt lietotājus no jūsu vietnes.<br />
+Vai nu ievadiet savu pilnu IP adresi, vai arī izmantojiet aizstājējzīmi, lai aizliegtu virkni IP adrešu. Varat arī ievadīt e-pasta adresi, lai pārtrauktu lietotājam reģistrēties kā dalībniekam jūsu vietnē.<br /><br />
+<b>Aizliegums pēc IP adreses:</b><br />
+IP adreses 123.123.123.123 ievadīšana apstāsies lietotāju ar šo adresi, kas apmeklē jūsu vietni.<br />
+IP adreses ievadīšana ar vienu vai vairākiem aizstājējzīmes gala blokos, piemēram, 123.123.123. * Vai 214.098. *. *, Apstāsies nevienu personu šajā IP diapazonā no jūsu apmeklējuma
+vietne (Ņemiet vērā, ka jābūt precīzi četrām ciparu vai zvaigznītes grupām)<br /><br />
+Atbalsta arī IPV6 formāta adreses, tostarp '::' lai attēlotu nulles vērtību bloku. Katrs pāris ciparu beigās laukos var būt atsevišķs wildcard<br /><br />
+<b>Aizliegums pa e-pastu</b><br />
+Ievadot e-pasta adresi foo@bar.com, neviens nevarēs izmantot šo e-pasta adresi, reģistrējoties kā dalībnieks savā vietnē.<br />
+Ievadot e-pasta adresi *@bar.com, neviens netiks izmantots, izmantojot šo e-pasta domēnu, reģistrējoties kā dalībnieks jūsu vietnē.<br /><br />
+<b>Aizliegums pēc lietotāja vārda</b><br />
+Tas tiek darīts no lietotāja administrēšanas lapas.<br /><br />";
   break;
 case 'whadd' :
 case 'whedit' :
-  $text = "You can specify IP addresses which you know to be 'friendly' here - generally those for the main site admins, to guarantee that they can
-  always gain access to the site.<br />
-  You are advised to keep the number of addresses in this list to an absolute minimum; both for security, and to minimise the impact on site performance.";
+  $text = "Varat norādīt IP adreses, par kurām jūs zināt 'draudzīgs' šeit - parasti tie, kas paredzēti galvenajiem portāla administratoriem, lai nodrošinātu, ka viņi to var
+   vienmēr piekļūstiet vietnei.<br />
+  Jums ir ieteicams saglabāt šajā sarakstā norādīto adrešu skaitu līdz minimālajam līmenim; gan drošības, gan arī, lai samazinātu ietekmi uz vietnes veiktspēju.";
   break;
 case 'banlog' :
-  $text = 'This shows a list of all site accesses involving an address which is in the ban list or the white list. The \'reason\' column shows the outcome.';
+  $text = 'Tajā parādīts visu vietņu piekļuves saraksts, kurā ietverta adrese, kas ir aizliegumu sarakstā vai baltā sarakstā. \'iemesls\' ailē ir redzams rezultāts.';
   break;
 case 'white' :
-  $text = "This page shows a list of all IP addresses and email addresses which are explicitly permitted.<br />
-    This list takes priority over the ban list - it should not be possible for an address from this list to be banned.<br />
-	All addresses must be manually entered.";
+  $text = "Šajā lapā tiek parādīts visu to IP adrešu un e-pasta adrešu saraksts, kuras ir skaidri atļautas.<br />
+    Šis saraksts ir prioritārs pār aizliegumu sarakstu - nedrīkst būt iespējams, lai šī saraksta adrese tiktu aizliegta.<br />
+	Visas adreses ir jāievada manuāli.";
   break;
 case 'list' :
 default :
-$text = 'This page shows a list of all IP addresses, hostnames and email addresses which are banned. 
-(Banned users are shown on the user administration page)<br /><br />
-<b>Automatic Bans</b><br />
-e107 automatically bans individual IP addresses if they attempt to flood the site, as well as addresses with failed logins.<br />
-These bans also appear in this list. You can select (on the options page) what to do for each type of ban.<br /><br />
-<b>Removing a ban</b><br />
-You can set an expiry period for each type of ban, in which case the entry is removed once the ban period expires. Otherwise the
- ban remains until you remove it.<br />
-You can modify the ban period from this page - times are calculated from now.';
+$text = 'Šajā lapā tiek rādīts saraksts ar visām aizliegtajām IP adresēm, saimniekdatoru nosaukumiem un e-pasta adresēm. 
+(Aizliegtie lietotāji tiek parādīti lietotāja administrēšanas lapā)<br /><br />
+<b>Automātiskie aizliegumi</b><br />
+e107 automātiski aizliedz atsevišķas IP adreses, ja tās mēģina pārpludināt vietni, kā arī adreses ar neizdevušiem logins.<br />
+Šie aizliegumi arī parādās šajā sarakstā. Jūs varat izvēlēties (opciju lapā), kā rīkoties katram aizlieguma veidam.<br /><br />
+<b>Aizlieguma noņemšana</b><br />
+Varat iestatīt derīguma termiņu katram aizlieguma veidam, tādā gadījumā ieraksts tiek noņemts, kad beidzies aizlieguma periods. Pretējā gadījumā
+  aizliegums paliek, kamēr to noņemat.<br />
+Jūs varat mainīt aizlieguma periodu no šīs lapas - laiki tiek aprēķināti no šī brīža.';
 }
 $ns -> tablerender($caption, $text);
