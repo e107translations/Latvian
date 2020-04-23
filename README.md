@@ -1,6 +1,6 @@
 # Latvian
-Latvian V 2.1.9
+Latvian v2.2.1
 
-Language pack Latvian, release for version 2.1.9
+Language pack Latvian, release for version v2.2.1
 
-(last updated 01-12-2018)
+(last updated 23-04-2020)
